@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Space Data Structures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;800&family=Outfit:wght@300;400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sky"></div>
+<div class="orbits"></div>
+<canvas id="stars"></canvas>
+<div class="earth"></div>
+<div class="grain"></div>
+
+<div class="brand">whotfiszeek</div>
+
+
+<div id="profile" class="profile hidden">
+  <span class="avatar" id="avatar"></span>
+  <span class="pname" id="pname"></span>
+  <button id="btn-exit" class="exit">Exit</button>
+</div>
+
+<main>
+
+  <section id="s-name" class="screen bare active">
+    <h1>SPACE DATA<br>STRUCTURES</h1>
+    <p class="tagline">Explore the infinite.</p>
+    <input id="name" type="text" placeholder="Enter your name to begin" maxlength="30" autocomplete="off">
+    <button id="btn-name">Launch &nbsp;↗</button>
+    <p class="error" id="e-name"></p>
+  </section>
+
+
+  <section id="s-menu" class="screen bare">
+    <h1 id="greeting"></h1>
+    <p class="sub">Choose an algorithm</p>
+    <div class="cards">
+      <button class="card" data-algo="stack">
+        <span class="icon"><svg viewBox="0 0 48 48"><rect x="9" y="8" width="30" height="9" rx="3"/><rect x="9" y="19.5" width="30" height="9" rx="3"/><rect x="9" y="31" width="30" height="9" rx="3"/></svg></span>
+        <strong>Stack</strong><small>Last In, First Out</small>
+      </button>
+      <button class="card" data-algo="array">
+        <span class="icon"><svg viewBox="0 0 48 48"><rect x="3" y="16" width="9" height="16" rx="2"/><rect x="14" y="16" width="9" height="16" rx="2"/><rect x="25" y="16" width="9" height="16" rx="2"/><rect x="36" y="16" width="9" height="16" rx="2"/></svg></span>
+        <strong>Array</strong><small>Blocks with index</small>
+      </button>
+    </div>
+  </section>
+
+
+  <section id="s-setup" class="screen">
+    <h2 id="setup-title"></h2>
+    <div class="box" id="instructions"></div>
+    <label>Datatype</label>
+    <select id="type"><option>Integer</option><option>Double</option><option>String</option><option>Character</option></select>
+    <label>Size (1 – 12)</label>
+    <div class="row"><input id="size" type="number" min="1" max="12" placeholder="e.g. 5"><button id="btn-size">Set size</button></div>
+    <div id="fields"></div>
+    <button id="btn-setup" class="hidden pulse">Start mission</button>
+    <button id="btn-back" class="ghost">← Back</button>
+    <p class="error" id="e-setup"></p>
+  </section>
+
+
+  <section id="s-op" class="screen">
+    <h2 id="op-title"></h2>
+    <div id="visual-op" class="visual"></div>
+    <p class="sub">Choose an operation:</p>
+    <input id="op-input" class="hidden" type="text" placeholder="Index">
+    <input id="op-value" class="hidden" type="text" placeholder="Value">
+    <div class="row center" id="op-buttons"></div>
+    <p class="error" id="e-op"></p>
+  </section>
+
+
+  <section id="s-result" class="screen">
+    <h2>Result</h2>
+    <div class="box result" id="result-msg"></div>
+    <div id="visual-result" class="visual"></div>
+    <div id="continue-area">
+      <p class="sub">Will you continue?</p>
+      <div class="row center"><button id="btn-yes">Continue</button><button id="btn-no" class="ghost">No</button></div>
+    </div>
+    <div id="empty-area" class="hidden">
+      <p class="sub">It is empty now. Returning to base.</p>
+      <button id="btn-home">Return home</button>
+    </div>
+  </section>
+
+</main>
+<script src="main.js"></script>
+</body>
+</html>
